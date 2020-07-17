@@ -8,7 +8,7 @@ services:
        - ./docker/provision/mysql/init:/docker-entrypoint-initdb.d
      restart: always
      environment:
-       MYSQL_ROOT_PASSWORD: afonso123
+       MYSQL_ROOT_PASSWORD: PASSWORD
      networks:
        - webproxy
 
@@ -21,8 +21,8 @@ services:
      restart: always
      environment:
        WORDPRESS_DB_HOST: db:3306
-       WORDPRESS_DB_USER: afonsosantos
-       WORDPRESS_DB_PASSWORD: afonso123
+       WORDPRESS_DB_USER: USER
+       WORDPRESS_DB_PASSWORD: PASSWORD
        WORDPRESS_DB_NAME: wordpress
        VIRTUAL_HOST: teste-wp.afonsosantos.tech
        LETSENCRYPT_HOST: teste-wp.afonsosantos.tech
@@ -42,7 +42,7 @@ services:
        - kanboard_plugins:/var/www/app/plugins
        - kanboard_ssl:/etc/nginx/ssl
      environment:
-       DATABASE_URL: mysql://afonsosantos:afonso123@db/kanboard
+       DATABASE_URL: mysql://USER:PASSSWORD@db/kanboard
        VIRTUAL_HOST: teste-kb.afonsosantos.tech
        LETSENCRYPT_HOST: teste-kb.afonsosantos.tech
        LETSENCRYPT_EMAIL: afonso.faisca1@gmail.com
