@@ -2,11 +2,11 @@
 
 # Docker Compose para Wordpress e Kanboard
 
-Este repositório contém um ficheiro `docker-compose.yml` que configura um container para Wordpress e um outro container para a aplicação Kanboard.
+Este repositório contém um ficheiro `docker-compose.yml` que cria e configura *containers* para vários serviços, como Wordpress, Kanboard e MySQL.
 
 ## Funcionamento
 
-Este repositório deve ser utilizado em conjunto com um *proxy*, visto que estamos a servir vários serviços (Wordpress e Kanboard) no mesmo servidor, na mesma porta (80 e 443). O *proxy* utilizado está presente [neste repositório](https://github.com/evertramos/docker-compose-letsencrypt-nginx-proxy-companion), e permite servir vários *containers* Docker no mesmo servidor, na mesma porta, mas em diferentes domínios/subdomínios, com SSL incluído através do serviço Let's Encrypt.
+**Este repositório deve ser utilizado em conjunto com um *proxy***, visto que estamos a servir vários serviços (Wordpress e Kanboard) no mesmo servidor, na mesma porta (80 e 443). O *proxy* utilizado está presente [neste repositório](https://github.com/evertramos/docker-compose-letsencrypt-nginx-proxy-companion), e permite servir vários *containers* Docker no mesmo servidor, na mesma porta, mas em diferentes domínios/subdomínios, com SSL incluído através do serviço [Let's Encrypt](https://letsencrypt.org/).
 
 ## Serviços
 
