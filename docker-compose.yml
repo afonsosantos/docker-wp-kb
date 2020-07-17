@@ -1,0 +1,60 @@
+version: '3.3'
+
+services:
+   db:
+     image: mysql:5.7
+     volumes:
+       - db_data:/var/lib/mysql
+       - ./docker/provision/mysql/init:/docker-entrypoint-initdb.d
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: afonso123
+     networks:
+       - webproxy
+
+   wordpress:
+     depends_on:
+       - db
+     image: wordpress:latest
+     ports:
+       - "8080:80"
+     restart: always
+     environment:
+       WORDPRESS_DB_HOST: db:3306
+       WORDPRESS_DB_USER: afonsosantos
+       WORDPRESS_DB_PASSWORD: afonso123
+       WORDPRESS_DB_NAME: wordpress
+       VIRTUAL_HOST: teste-wp.afonsosantos.tech
+       LETSENCRYPT_HOST: teste-wp.afonsosantos.tech
+       LETSENCRYPT_EMAIL: afonso.faisca1@gmail.com
+     networks:
+       - webproxy
+
+   kanboard:
+     depends_on:
+      - db
+     image: kanboard/kanboard:latest
+     restart: always
+     ports:
+       - "8081:80"
+     volumes:
+       - kanboard_data:/var/www/app/data
+       - kanboard_plugins:/var/www/app/plugins
+       - kanboard_ssl:/etc/nginx/ssl
+     environment:
+       DATABASE_URL: mysql://afonsosantos:afonso123@db/kanboard
+       VIRTUAL_HOST: teste-kb.afonsosantos.tech
+       LETSENCRYPT_HOST: teste-kb.afonsosantos.tech
+       LETSENCRYPT_EMAIL: afonso.faisca1@gmail.com
+     networks:
+       - webproxy
+
+volumes:
+    db_data: {}
+    kanboard_data:
+    kanboard_plugins:
+    kanboard_ssl:
+
+networks:
+  webproxy:
+    external: true
