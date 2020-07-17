@@ -27,10 +27,16 @@ Este repositório deve ser utilizado em conjunto com um *proxy*, visto que estam
     - `VIRTUAL_HOST`
     - `LETSENCRYPT_HOST`
     - `LETSENCRYPT_EMAIL`
+
+4. Configurar o ficheiro [01-databases.sql](docker/provision/mysql/init/01-databases.sql) com os valores corretos
     
-4. Iniciar os *containers* com os serviços:
+5. Iniciar os *containers* com os serviços:
 
     `docker-compose up -d`
+
+### Notas
+
+O ficheiro [01-databases.sql](docker/provision/mysql/init/01-databases.sql) contém código SQL que será executado quando o *container* do serviço MySQL for iniciado. O nome das bases de dados lá especificadas tem de ser igual ao nome das bases de dados configuradas no ficheiro [docker-compose.yml](docker-compose.yml) para cada serviço.
 
 ## Licença
 

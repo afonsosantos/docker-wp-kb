@@ -3,5 +3,5 @@ CREATE DATABASE IF NOT EXISTS `wordpress`;
 CREATE DATABASE IF NOT EXISTS `kanboard`;
 
 -- create root user and grant rights
-CREATE USER 'afonsosantos'@'%' IDENTIFIED BY 'afonso123';
-GRANT ALL PRIVILEGES ON *.* TO 'afonsosantos'@'%' IDENTIFIED BY 'afonso123';
+CREATE USER 'USER'@'%' IDENTIFIED BY 'PASSWORD';
+GRANT ALL PRIVILEGES ON *.* TO 'USER'@'%' IDENTIFIED BY 'PASSWORD';
