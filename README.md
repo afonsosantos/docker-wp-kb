@@ -1,4 +1,4 @@
-![](https://pyvoice-assets.s3.amazonaws.com/logotipos/cover.png =3500x720)
+![](https://pyvoice-assets.s3.amazonaws.com/logotipos/cover.png)
 
 # Docker Compose para Wordpress e Kanboard
 
