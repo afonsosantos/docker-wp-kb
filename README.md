@@ -1,4 +1,4 @@
-![](https://pvassets.blob.core.windows.net/images/cover_slim.png)
+![](https://cdn.pyvoice.tech/images/cover_slim.png)
 
 # Docker Compose para Wordpress e Kanboard
 
