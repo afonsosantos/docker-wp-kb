@@ -1,5 +1,3 @@
-![](https://cdn.pyvoice.tech/images/cover_slim.png)
-
 # Docker Compose para Wordpress e Kanboard
 
 Este repositório contém um ficheiro `docker-compose.yml` que cria e configura *containers* para vários serviços, como Wordpress, Kanboard e MySQL.
